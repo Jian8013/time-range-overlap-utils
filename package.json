@@ -1,6 +1,6 @@
 {
   "name": "time-range-overlap-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Determine whether two time intervals overlap and, if so, how long the intersection lasts.",
   "type": "module",
   "main": "src/index.js",
