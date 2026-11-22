@@ -52,3 +52,10 @@ bad computation upstream yields `false` instead of a poisoned comparison.
 - `overlapDuration(a, b) -> number` — length of the intersection, or `0` when disjoint.
 - `contains(range, point) -> boolean` — true when `range.start <= point < range.end`.
 - `mergeRanges(ranges) -> Array<{start, end}>` — sort and coalesce; drops empty ranges and does not mutate the input.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
